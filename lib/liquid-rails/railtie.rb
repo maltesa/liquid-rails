@@ -5,6 +5,7 @@ module Liquid
 
       initializer 'liquid-rails.register_template_handler' do |app|
         ActiveSupport.on_load(:action_view) do
+          Rails.logger.info "LOADED!
           ActionView::Template.register_template_handler(:liquid, Liquid::Rails::TemplateHandler)
         end
       end
